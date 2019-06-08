@@ -2,9 +2,9 @@
   <div class="vue-container">
     <div class="sub-header">
       <div class="chart-name">Chatbot Users</div>
-      <!-- <div class="time-filters-container">
+      <div class="time-filters-container">
         <ChatbotTimeFilters />
-      </div> -->
+      </div>
     </div>
     <div class="chart-viewport">
       <LineChart :chartData="chartData" />
@@ -34,6 +34,7 @@ import Component from 'vue-class-component';
 import { namespace } from 'vuex-class';
 
 import LineChart from '@/components/common/LineChart/index.vue';
+import ChatbotTimeFilters from '@/components/ChatbotTimeFilters.vue';
 
 import options from '@/components/common/LineChart/options';
 import {
@@ -49,16 +50,16 @@ const ChatbotUsers = namespace(chartbotUsers.name);
 @Component({
   components: {
     LineChart,
+    ChatbotTimeFilters,
   },
 })
 export default class ChatbotUsersChart extends Vue {
   private options: any = options;
 
-  @ChatbotUsers.State private timeType!: TimeType;
   @ChatbotUsers.Getter private chartData!: IFormattedChatbotUsersChart[];
-  @ChatbotUsers.Action private getChartData: any;
+  @ChatbotUsers.Action private getChartData!: () => Promise<void>;
 
-  public created() {
+  private created() {
     this.options.scales.yAxes[0].ticks.stepSize = 50;
     this.getChartData();
   }

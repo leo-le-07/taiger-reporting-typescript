@@ -66,7 +66,7 @@ const mutations: MutationTree<IChatbotUsersState> = {
   setChartData(state, chartData: IChatbotUsersChart[]) {
     state.chartData = chartData;
   },
-  setTimeType(state, { timeType }: { timeType: TimeType }) {
+  setTimeType(state, timeType: TimeType) {
     state.timeType = timeType;
   },
 };
@@ -80,8 +80,8 @@ const actions: ActionTree<IChatbotUsersState, RootState> = {
 
     commit('setChartData', data);
   },
-  async updateTimeType({ commit, dispatch }, { timeType }) {
-    commit('setTimeType', { timeType });
+  async updateTimeType({ commit, dispatch }, timeType: TimeType) {
+    commit('setTimeType', timeType);
     dispatch('getChartData');
   },
 };
