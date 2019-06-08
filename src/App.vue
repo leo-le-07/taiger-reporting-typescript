@@ -1,29 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="vue-container">
+    <div class="content-container" :class="{ collapsed: isCollapsed }">
+      <b-container>
+        <!-- <Breadcrumb /> -->
+        <router-view/>
+      </b-container>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Overview extends Vue {
+  private isCollapsed: boolean = false;
+
+  public toggleCollapsed() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+</script>
+
+
+<style lang="scss" scoped>
+.vue-container {
+  display: flex;
+}
+
+.content-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 280px;
+  transition: .3s ease;
+  width: 100%;
+
+  &.collapsed {
+    margin-left: 80px;
+    transition: .3s ease;
   }
 }
 </style>
