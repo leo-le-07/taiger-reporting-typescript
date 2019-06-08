@@ -1,5 +1,6 @@
 <template>
   <div class="vue-container">
+    <Sidebar :isCollapsed="isCollapsed" :toggleCollapsed="toggleCollapsed" />
     <div class="content-container" :class="{ collapsed: isCollapsed }">
       <b-container>
         <!-- <Breadcrumb /> -->
@@ -10,9 +11,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-@Component
+import Sidebar from '@/components/Sidebar.vue';
+
+@Component({
+  components: {
+    Sidebar,
+  },
+})
 export default class Overview extends Vue {
   private isCollapsed: boolean = false;
 
