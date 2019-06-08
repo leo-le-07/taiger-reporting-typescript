@@ -1,4 +1,5 @@
-import chatbotUsersRepository from './chatbot-users-repository';
+import chatbotUsersRepository from './chatbot-users-repo';
+import chatbotPerformanceRepository from './chatbot-performance-repo';
 
 interface IRepository {
   [key: string]: any;
@@ -6,6 +7,7 @@ interface IRepository {
 
 const repositories: IRepository = {
   chatbotUsers: chatbotUsersRepository,
+  chatbotPerformance: chatbotPerformanceRepository,
 };
 
 export const repositoryFactory = {

@@ -3,6 +3,7 @@ import Vuex, { StoreOptions } from 'vuex';
 
 import { RootState } from '@/types';
 import { chatbotUsers } from './modules/chatbot-users';
+import { chatbotPerformance } from './modules/chatbot-performance';
 
 interface IModule {
   [key: string]: any;
@@ -16,6 +17,7 @@ const store: StoreOptions<RootState> = {
   strict: debug,
   modules: {
     chatbotUsers,
+    chatbotPerformance,
   },
 };
 

@@ -6,9 +6,9 @@
     <div class="chart-container">
       <ChatbotUsersChart />
     </div>
-    <!-- <div class="performance-container">
+    <div class="performance-container">
       <ChatbotPerformanceMetrics />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -17,10 +17,12 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 
 import ChatbotUsersChart from '@/components/ChatbotUsersChart.vue';
+import ChatbotPerformanceMetrics from '@/components/ChatbotPerformanceMetrics/index.vue';
 
 @Component({
   components: {
     ChatbotUsersChart,
+    ChatbotPerformanceMetrics,
   },
 })
 export default class Overview extends Vue {}
