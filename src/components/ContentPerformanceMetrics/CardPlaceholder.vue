@@ -10,42 +10,29 @@
       <div class="value">
         <slot name="value" />
       </div>
-      <div
-        class="percentage-container"
-        :class="{ 'up-percentage': isPositivePercentage, 'down-percentage': !isPositivePercentage }"
-      >
-        <span class="indicator-icon">
-          <font-awesome-icon :icon="isPositivePercentage ? upIcon : downIcon" />
-        </span>
-        {{ percentageValue }}
-      </div>
+    </div>
+    <div class="footer-container">
+      <slot name="footer" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import {
-  faInfoCircle,
-  faCaretUp,
-  faCaretDown,
-} from '@fortawesome/free-solid-svg-icons';
+
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component
 export default class CardPlaceholder extends Vue {
   private infoIcon = faInfoCircle;
-  private upIcon = faCaretUp;
-  private downIcon = faCaretDown;
 
-  @Prop() private percentageValue!: number;
-  @Prop() private isPositivePercentage!: boolean;
   @Prop() private title!: string;
 }
 </script>
 
 <style lang="scss" scoped>
 .vue-container {
-  padding: 20px;
+  padding: 20px 20px 5px;
   border: 1px solid $borderGray500;
   border-radius: 4px;
   cursor: pointer;
@@ -58,12 +45,12 @@ export default class CardPlaceholder extends Vue {
 }
 
 .header-container {
-  font-size: $fontSizeNormal;
+  font-size: $fontSizeSmall14;
   font-weight: 500;
   color: $gray500;
   display: flex;
-  align-items: center;
   margin-bottom: 10px;
+  min-height: 42px;
 }
 
 .value {
@@ -82,23 +69,10 @@ export default class CardPlaceholder extends Vue {
   padding-left: 10px;
 }
 
-.percentage-container {
+.footer-container {
   display: flex;
-  align-items: center;
-  margin-left: 15px;
-  font-size: $fontSizeLarge18;
-  font-weight: bold;
-}
-
-.indicator-icon {
-  margin-right: 5px;
-}
-
-.up-percentage {
-  color: $green500;
-}
-
-.down-percentage {
-  color: $red500;
+  justify-content: flex-end;
+  min-height: 24px;
+  font-size: $fontSizeSmall14;
 }
 </style>

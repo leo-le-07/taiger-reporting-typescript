@@ -4,6 +4,7 @@ import Vuex, { StoreOptions } from 'vuex';
 import { RootState } from '@/types';
 import { chatbotUsers } from './modules/chatbot-users';
 import { chatbotPerformance } from './modules/chatbot-performance';
+import { contentPerformance } from './modules/content-performance';
 
 interface IModule {
   [key: string]: any;
@@ -18,6 +19,7 @@ const store: StoreOptions<RootState> = {
   modules: {
     chatbotUsers,
     chatbotPerformance,
+    contentPerformance,
   },
 };
 

@@ -27,8 +27,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import { TimeType } from '@/store/modules/chatbot-users/types';
