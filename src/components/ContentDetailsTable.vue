@@ -33,7 +33,7 @@
               <span class="info-icon"><font-awesome-icon :icon="icons.information" /></span>
             </div>
           </template>
-          <!-- <template slot="action" slot-scope="data">
+          <template slot="action" slot-scope="data">
             <div class="action-container">
               <router-link
                 tag="a"
@@ -46,7 +46,7 @@
               >
                 View Flow Diagram
               </router-link>
-              <router-link
+              <!-- <router-link
                 tag="a"
                 :to="{
                   name: routeConstants.contentConversations.name,
@@ -56,9 +56,9 @@
                 class="action-item"
               >
                 View Conversations
-              </router-link>
+              </router-link> -->
             </div>
-          </template> -->
+          </template>
         </b-table>
         <div class="pagination-container">
           <PaginationGroup
@@ -108,25 +108,25 @@ export default class ContentDetailsTable extends Vue {
       key: 'timesAsked',
       label: 'Times Asked',
       sortable: true,
-      formatter: (value) => formatNumber(value),
+      formatter: (value: number) => formatNumber(value),
     },
     {
       key: 'fallbackCount',
       label: 'Fallback Count',
       sortable: true,
-      formatter: (value) => formatNumber(value),
+      formatter: (value: number) => formatNumber(value),
     },
     {
       key: 'confusionRate',
       label: 'Confusion Rate',
       sortable: true,
-      formatter: (value) => formatPercentage(value),
+      formatter: (value: number) => formatPercentage(value),
     },
     {
       key: 'dropoffRate',
       label: 'Dropoff Rate',
       sortable: true,
-      formatter: (value) => formatPercentage(value),
+      formatter: (value: number) => formatPercentage(value),
     },
     {
       key: 'action',

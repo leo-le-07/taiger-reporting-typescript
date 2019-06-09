@@ -3,7 +3,7 @@
     <Sidebar :isCollapsed="isCollapsed" :toggleCollapsed="toggleCollapsed" />
     <div class="content-container" :class="{ collapsed: isCollapsed }">
       <b-container>
-        <!-- <Breadcrumb /> -->
+        <Breadcrumb />
         <router-view/>
       </b-container>
     </div>
@@ -14,10 +14,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 import Sidebar from '@/components/Sidebar.vue';
+import Breadcrumb from '@/components/common/Breadcrumb.vue';
 
 @Component({
   components: {
     Sidebar,
+    Breadcrumb,
   },
 })
 export default class Overview extends Vue {

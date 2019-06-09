@@ -87,7 +87,7 @@ const mutations: MutationTree<IContentPerformanceState> = {
   setListAnswerRating(state, { resultList }) {
     state.answerRatingList = resultList;
   },
-  setIntentId(state, { id }) {
+  setIntentId(state, id) {
     state.selectedIntentId = id;
   },
   clearIntentId(state) {

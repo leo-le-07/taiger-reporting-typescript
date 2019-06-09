@@ -4,6 +4,7 @@ import Vue from 'vue';
 
 import '@/plugins/bootstrap-vue';
 import '@/plugins/font-awesome';
+import '@/plugins/class-component-hooks';
 
 import App from '@/App.vue';
 import router from '@/router';

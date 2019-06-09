@@ -3,6 +3,7 @@ import chatbotPerformanceRepository from './chatbot-performance-repo';
 import contentPerformanceRepository from './content-performance-repo';
 import contentDetailsRepository from './content-details-repo';
 import answerRatingRepository from './answer-rating-repo';
+import contentFlowDiagramRepository from './content-flow-diagram-repo';
 
 interface IRepository {
   [key: string]: any;
@@ -14,6 +15,7 @@ const repositories: IRepository = {
   contentPerformance: contentPerformanceRepository,
   contentDetails: contentDetailsRepository,
   answerRating: answerRatingRepository,
+  contentFlowDiagram: contentFlowDiagramRepository,
 };
 
 export const repositoryFactory = {

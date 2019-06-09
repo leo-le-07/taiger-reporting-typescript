@@ -22,7 +22,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
-import Modal from '@/components/common/Modal';
+import Modal from '@/components/common/Modal.vue';
 
 import * as contentPerformance from '@/store/modules/content-performance';
 import { formatNumber } from '@/utils/number-formatter';
@@ -47,24 +47,24 @@ export default class AnswerRatingModal extends Vue {
       label: 'Positive Ratings',
       class: 'text-center',
       sortable: true,
-      formatter: (value) => formatNumber(value),
+      formatter: (value: number) => formatNumber(value),
     },
     {
       key: 'negativeRating',
       label: 'Negative Ratings',
       class: 'text-center',
       sortable: true,
-      formatter: (value) => formatNumber(value),
+      formatter: (value: number) => formatNumber(value),
     },
     {
       key: 'noRating',
       label: 'No Ratings',
       class: 'text-center',
       sortable: true,
-      formatter: (value) => formatNumber(value),
+      formatter: (value: number) => formatNumber(value),
     },
   ];
 
-  @ContentPerformance.State('answerRatingList') answerRatings!: IAnswerRating[] ;
+  @ContentPerformance.State('answerRatingList') private answerRatings!: IAnswerRating[];
 }
 </script>
