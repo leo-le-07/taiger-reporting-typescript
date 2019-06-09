@@ -9,7 +9,7 @@
     <div class="conversation-table-container">
       <ConversationTable />
     </div>
-    <!-- <HistoryModal /> -->
+    <HistoryModal />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ import { namespace } from 'vuex-class';
 
 import Header from '@/components/ContentConversations/Header.vue';
 import ConversationTable from '@/components/ContentConversations/ConversationTable.vue';
-// import HistoryModal from '@/components/ContentConversations/HistoryModal.vue';
+import HistoryModal from '@/components/ContentConversations/HistoryModal.vue';
 
 import { routeConstants } from '@/constants';
 import { IBreadcrumbItem } from '@/store/modules/breadcrumb/types';
@@ -35,7 +35,7 @@ const ContentConversations = namespace(contentConversations.name);
   components: {
     Header,
     ConversationTable,
-    // HistoryModal,
+    HistoryModal,
   },
 })
 export default class ContentConversationsPage extends Vue {

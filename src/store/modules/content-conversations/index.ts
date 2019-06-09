@@ -10,6 +10,7 @@ export const name = 'contentConversations';
 
 const contentConversationsRepository = repositoryFactory.get('contentConversations');
 const contentConversationListRepository = repositoryFactory.get('contentConversationList');
+const contentConversationHistoryRepository = repositoryFactory.get('contentConversationHistory');
 
 const state: IContentConversationsState = {
   name: '',
@@ -76,7 +77,7 @@ const actions: ActionTree<IContentConversationsState, RootState> = {
     commit('setConversationLoading', false);
   },
   async getConversationDetails({ commit }, id) {
-    const response = await contentConversationListRepository.get({ id });
+    const response = await contentConversationHistoryRepository.get({ id });
 
     const { data } = response;
 

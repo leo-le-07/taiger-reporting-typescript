@@ -75,6 +75,7 @@ export default class ConversationTable extends Vue {
   @ContentConversations.Action private updateCurrentPage!: (value: number) => void;
   @ContentConversations.Action private updatePageSize!: (value: number) => void;
   @ContentConversations.Action private getContentConversationList!: () => void;
+  @ContentConversations.Action private getConversationDetails!: (id: string) => void;
 
   private fields = [
     {
@@ -132,6 +133,10 @@ export default class ConversationTable extends Vue {
   }
 
   private openHistoryModal(id: string) {
+    return () => {
+      this.getConversationDetails(id);
+      this.$bvModal.show('conversation-history-modal');
+    };
   }
 
   private created() {

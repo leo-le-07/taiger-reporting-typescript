@@ -6,6 +6,7 @@ import answerRatingRepository from './answer-rating-repo';
 import contentFlowDiagramRepository from './content-flow-diagram-repo';
 import contentConversationsRepository from './content-conversations-repo';
 import contentConversationListRepository from './content-conversation-list-repo';
+import contentConversationHistoryRepository from './content-conversation-history-repo';
 
 interface IRepository {
   [key: string]: any;
@@ -20,6 +21,7 @@ const repositories: IRepository = {
   contentFlowDiagram: contentFlowDiagramRepository,
   contentConversations: contentConversationsRepository,
   contentConversationList: contentConversationListRepository,
+  contentConversationHistory: contentConversationHistoryRepository,
 };
 
 export const repositoryFactory = {
