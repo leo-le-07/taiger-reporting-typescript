@@ -21,10 +21,10 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
-import NoMessagesSent from './NoMessagesSent';
-import TotalFallbackCount from './TotalFallbackCount';
-import OverallConfusionRate from './OverallConfusionRate';
-import TotalNoAnswersRatedHelpful from './TotalNoAnswersRatedHelpful';
+import NoMessagesSent from './NoMessagesSent.vue';
+import TotalFallbackCount from './TotalFallbackCount.vue';
+import OverallConfusionRate from './OverallConfusionRate.vue';
+import TotalNoAnswersRatedHelpful from './TotalNoAnswersRatedHelpful.vue';
 
 import * as contentPerformance from '@/store/modules/content-performance';
 

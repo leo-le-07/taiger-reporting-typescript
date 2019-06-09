@@ -1,7 +1,7 @@
 import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
 
 import { repositoryFactory } from '@/apis/repository-factory';
-import { formatNumber, formatPercentage } from '@/utils/number-formatter'
+import { formatNumber, formatPercentage } from '@/utils/number-formatter';
 import { RootState } from '@/types';
 import { DEFAULT_PAGE_SIZE } from '@/constants';
 import {

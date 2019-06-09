@@ -7,10 +7,10 @@
       <div class="metrics-container">
         <ContentPerformanceMetrics />
       </div>
-      <!-- <div class="content-details-container">
+      <div class="content-details-container">
         <ContentDetailsTable />
       </div>
-      <AnswerRatingModal /> -->
+      <!-- <AnswerRatingModal /> -->
     </div>
     <router-view></router-view>
   </div>
@@ -21,6 +21,7 @@ import { Vue, Component } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import ContentPerformanceMetrics from '@/components/ContentPerformanceMetrics/index.vue';
+import ContentDetailsTable from '@/components/ContentDetailsTable.vue';
 
 import * as contentPerformance from '@/store/modules/content-performance';
 
@@ -29,6 +30,7 @@ const ContentPerformance = namespace(contentPerformance.name);
 @Component({
   components: {
     ContentPerformanceMetrics,
+    ContentDetailsTable,
   },
 })
 export default class ContentPerformancePage extends Vue {
