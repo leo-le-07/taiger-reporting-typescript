@@ -75,7 +75,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { namespace } from 'vuex-class';
 
@@ -86,6 +86,7 @@ import Loading from '@/components/common/Loading.vue';
 import { routeConstants } from '@/constants';
 import * as contentPerformance from '@/store/modules/content-performance';
 import { IContent } from '@/store/modules/content-performance/types';
+import { formatNumber, formatPercentage } from '@/utils/number-formatter';
 
 const ContentPerformance = namespace(contentPerformance.name);
 
@@ -107,21 +108,25 @@ export default class ContentDetailsTable extends Vue {
       key: 'timesAsked',
       label: 'Times Asked',
       sortable: true,
+      formatter: (value) => formatNumber(value),
     },
     {
       key: 'fallbackCount',
       label: 'Fallback Count',
       sortable: true,
+      formatter: (value) => formatNumber(value),
     },
     {
       key: 'confusionRate',
       label: 'Confusion Rate',
       sortable: true,
+      formatter: (value) => formatPercentage(value),
     },
     {
       key: 'dropoffRate',
       label: 'Dropoff Rate',
       sortable: true,
+      formatter: (value) => formatPercentage(value),
     },
     {
       key: 'action',
