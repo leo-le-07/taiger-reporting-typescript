@@ -6,9 +6,9 @@
     <div class="metrics-container">
       <ContentFlowDiagramMetrics />
     </div>
-    <!-- <div class="chart-container">
-      <FlowDiagramChart />
-    </div> -->
+    <div class="chart-container">
+      <ContentFlowDiagramChart />
+    </div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import ContentFlowDiagramMetrics from '@/components/ContentFlowDiagramMetrics/index.vue';
-// import FlowDiagramChart from '@/components/FlowDiagramChart.vue';
+import ContentFlowDiagramChart from '@/components/ContentFlowDiagramChart.vue';
 
 import * as breadcrumb from '@/store/modules/breadcrumb';
 import * as contentPerformance from '@/store/modules/content-performance';
@@ -32,6 +32,7 @@ const ContentFlowDiagram = namespace(contentFlowDiagram.name);
 @Component({
   components: {
     ContentFlowDiagramMetrics,
+    ContentFlowDiagramChart,
   },
 })
 export default class ContentFlowDiagramPage extends Vue {

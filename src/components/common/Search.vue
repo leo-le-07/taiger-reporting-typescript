@@ -29,7 +29,7 @@ export default class Search extends Vue {
   private content = '';
   private maxLength = MAX_LENGTH;
 
-  @Prop() private onChange!: () => void;
+  @Prop() private onChange!: (content: string) => void;
 
   private handleEnter() {
     this.onChange(this.content);
