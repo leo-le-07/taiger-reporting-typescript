@@ -7,6 +7,7 @@ import { chatbotUsers } from './modules/chatbot-users';
 import { chatbotPerformance } from './modules/chatbot-performance';
 import { contentPerformance } from './modules/content-performance';
 import { contentFlowDiagram } from './modules/content-flow-diagram';
+import { contentConversations } from './modules/content-conversations';
 
 interface IModule {
   [key: string]: any;
@@ -24,6 +25,7 @@ const store: StoreOptions<RootState> = {
     chatbotPerformance,
     contentPerformance,
     contentFlowDiagram,
+    contentConversations,
   },
 };
 

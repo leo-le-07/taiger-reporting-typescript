@@ -46,7 +46,7 @@
               >
                 View Flow Diagram
               </router-link>
-              <!-- <router-link
+              <router-link
                 tag="a"
                 :to="{
                   name: routeConstants.contentConversations.name,
@@ -56,7 +56,7 @@
                 class="action-item"
               >
                 View Conversations
-              </router-link> -->
+              </router-link>
             </div>
           </template>
         </b-table>

@@ -1,11 +1,11 @@
 import { DEFAULT_PAGE_SIZE } from '@/constants';
 
 interface IQueryParams {
-  page: number;
-  pageSize: number;
-  searchContent: string;
-  sortBy: string | null;
-  sortDesc: boolean;
+  page?: number;
+  pageSize?: number;
+  searchContent?: string;
+  sortBy?: string | null;
+  sortDesc?: boolean;
 }
 
 export const getQueryParams = ({
