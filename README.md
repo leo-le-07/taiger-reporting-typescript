@@ -6,7 +6,8 @@
 * State management: `vuex`
 * Router: `vue-router`
 * Post-CSS: `sass`
-* ESLint: `@vue/eslint-config-standard`
+* Typescript
+* TSlint
 * Unit test: `jest`
 
 ### Naming conventions
