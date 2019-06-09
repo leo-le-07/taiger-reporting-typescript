@@ -22,7 +22,7 @@ import Breadcrumb from '@/components/common/Breadcrumb.vue';
     Breadcrumb,
   },
 })
-export default class Overview extends Vue {
+export default class App extends Vue {
   private isCollapsed: boolean = false;
 
   public toggleCollapsed() {

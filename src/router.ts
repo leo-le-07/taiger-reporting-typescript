@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Overview from '@/pages/Overview.vue';
-import ContentPerformance from '@/pages/ContentPerformance.vue';
+import OverviewPage from '@/pages/OverviewPage.vue';
+import ContentPerformancePage from '@/pages/ContentPerformancePage.vue';
 import ContentFlowDiagramPage from '@/pages/ContentFlowDiagramPage.vue';
 import ContentConversationsPage from '@/pages/ContentConversationsPage.vue';
 
@@ -15,12 +15,12 @@ export default new Router({
     {
       path: routeConstants.overview.path,
       name: routeConstants.overview.name,
-      component: Overview,
+      component: OverviewPage,
     },
     {
       path: routeConstants.contentPerformance.path,
       name: routeConstants.contentPerformance.name,
-      component: ContentPerformance,
+      component: ContentPerformancePage,
       children: [
         {
           path: routeConstants.contentFlowDiagram.path,

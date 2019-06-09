@@ -24,7 +24,7 @@ import ChatbotPerformanceMetrics from '@/components/ChatbotPerformanceMetrics/in
     ChatbotPerformanceMetrics,
   },
 })
-export default class Overview extends Vue {}
+export default class OverviewPage extends Vue {}
 </script>
 
 <style lang="scss" scoped>
